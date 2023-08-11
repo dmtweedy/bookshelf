@@ -6,14 +6,21 @@
 	 box-sizing: border-box;
 }
 
-.text-page {
+div.row{
+	height: 50px;
 	display: flex;
-	flex-direction: row;
+}
+
+.searchp{
+	font-size: larger;
 }
 
 .searchbar, .submitBtn{
-	justify-content: center;
-	display: inline;
+	margin-left: 50px;
+}
+
+.card-img-top{
+	height: 50px,
 }
 
 .book, .instruction {
