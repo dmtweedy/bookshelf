@@ -54,7 +54,7 @@ Profile.init(
     reviews: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'reviews',
+        model: 'fav_books',
         key: 'id'
       }
     },

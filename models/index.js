@@ -2,31 +2,60 @@
 const Profile = require('./Profile');
 const ReadBooks = require('./read-books');
 const WantBooks = require('./want-books');
-const FavBooks = require('./fav-books');
+const Books = require('./Books');
 
-// Products belongsTo Category
-Product.belongsTo(Category, {
-  foreignKey: 'category_id'
+
+// Product.belongsTo(Category, {
+//   foreignKey: 'category_id'
+// });
+
+Profile.hasMany(FavBooks, {
+  foreignKey: 'fav_books',
 });
 
-// Categories have many Products
-Category.hasMany(Product, {
-  foreignKey: 'product_id',
+Profile.hasMany(ReadBooks, {
+  foreignKey: 'read_books',
 });
 
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag(ProductTag), {
-  foreignKey: 'tag_id'
+Profile.hasMany(WantBooks, {
+  foreignKey: 'want_books',
+});
+
+
+Profile.belongsToMany(ProfileBook, {
+    foreignKey: book_id
 })
-// Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product(ProductTag), {
-  foreignKey: 'product_id'
+
+Book.belongsToMany(ProfileBook, {
+  foreignKey: profille_id
 })
+
+
+
+
 
 
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+  Profile,
+  ReadBooks,
+  WantBooks,
+  Books,
 };
+
+
+/*
+  Profile = users = can read multiple books 
+  Book = can be read by multiple users 
+
+  ProfileBook
+  profile_id 
+  book_id
+  is_favorite   1
+  has_read      1
+  wants_to_buy  0
+
+
+
+
+
+*/
