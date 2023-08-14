@@ -1,0 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS book_website_db;
+
+-- CREATE DATABASE
+CREATE DATABASE book_website_db;
+
