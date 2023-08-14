@@ -9,7 +9,7 @@ const Books = require('./Books');
 //   foreignKey: 'category_id'
 // });
 
-Profile.hasMany(FavBooks, {
+Profile.hasMany(Books, {
   foreignKey: 'fav_books',
 });
 

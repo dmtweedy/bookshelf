@@ -30,24 +30,27 @@ Profile.init(
         isEmail: true
       }
     },
+    password: {
+      type: DataTypes.STRING
+    },
     fav_books: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'fav_books',
+        model: 'books',
         key: 'id'
       }
     },
     read_books: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'read_books',
+        model: 'books',
         key: 'id'
       }
     },
     want_books: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'want_books',
+        model: 'books',
         key: 'id'
       }
     },
