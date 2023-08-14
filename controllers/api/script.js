@@ -8,6 +8,10 @@ var search = function(){
         return response.json()
     })
     .then(function(data){
-        console.log(data)
+        for (var i = data.items.length - 1; i >= 0; i--) {
+            console.log(data.items[i].volumeInfo.title)
+            console.log(data.items[i].volumeInfo.description)
+          }
+        
     })
 }
