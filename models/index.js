@@ -1,44 +1,17 @@
 // import models
 const Profile = require('./Profile');
-const ReadBooks = require('./read-books');
-const WantBooks = require('./want-books');
 const Books = require('./Books');
 
-
-// Product.belongsTo(Category, {
-//   foreignKey: 'category_id'
-// });
-
 Profile.hasMany(Books, {
-  foreignKey: 'fav_books',
+  foreignKey: 'id',
 });
 
-Profile.hasMany(ReadBooks, {
-  foreignKey: 'read_books',
-});
-
-Profile.hasMany(WantBooks, {
-  foreignKey: 'want_books',
-});
-
-
-Profile.belongsToMany(ProfileBook, {
-    foreignKey: book_id
+Books.belongsToMany(Profile, {
+  foreignKey: 'id'
 })
-
-Book.belongsToMany(ProfileBook, {
-  foreignKey: profille_id
-})
-
-
-
-
-
 
 module.exports = {
   Profile,
-  ReadBooks,
-  WantBooks,
   Books,
 };
 

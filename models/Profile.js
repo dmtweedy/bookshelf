@@ -31,7 +31,11 @@ Profile.init(
       }
     },
     password: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [8],
+      },
     },
     fav_books: {
       type: DataTypes.INTEGER,
@@ -57,7 +61,7 @@ Profile.init(
     reviews: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'fav_books',
+        model: 'books',
         key: 'id'
       }
     },

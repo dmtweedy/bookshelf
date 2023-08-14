@@ -30,7 +30,7 @@ Books.init(
     description: {
       type: DataTypes.STRING,
     },
-    review: {
+    rating: {
       type: DataTypes.STRING,
     },
   },
