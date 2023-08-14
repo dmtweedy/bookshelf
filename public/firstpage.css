@@ -994,3 +994,10 @@ body {
 	 padding: 10px 15px;
 }
  
+.container {
+	margin-top: 20px;
+}
+
+.glide__arrow {
+	margin-top: 175px;
+}
