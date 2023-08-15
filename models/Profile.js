@@ -23,6 +23,11 @@ Profile.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    username: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      unique: true
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
