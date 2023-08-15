@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Results</title>
+  <title>User Page</title>
 </head>
 
-
 <body>
-  {{{body}}}
-</body>
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1>
+        Welcome Home, {{{ user }}} 
+        Your Adventures continue...
+      </h1>
+    </header>
+      <main class="container container-fluid mt-5">
+        <h2>Continue Reading</h2>
+        <h2>Completed Reads</h2>
+        <h2>Your Reviews</h2>
+        {{{ body }}}
+      </main>
+  </div>
+  </body>
 
 </html>
