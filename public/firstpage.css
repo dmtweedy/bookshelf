@@ -1001,3 +1001,12 @@ body {
 .glide__arrow {
 	margin-top: 175px;
 }
+
+section {
+  margin-top: 50px;
+}
+
+#text {
+  font-size: larger;
+  font-weight: bold;
+}
