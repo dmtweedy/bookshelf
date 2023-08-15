@@ -1,5 +1,10 @@
 const router = require('express').Router();
-const { Profile } = require('../../models');
+const { Profile, Books } = require('../../models');
+
+router.get('/', async (req, res) => {
+  const userData = await Profile.findAll({ include: Books })
+  res.json(userData)
+})
 
 router.post('/', async (req, res) => {
   try {
