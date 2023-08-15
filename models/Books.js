@@ -12,8 +12,8 @@ Books.init(
       allowNull: false,
       autoIncrement: true
     },
-    book_id: {
-      type: DataTypes.INTEGER,
+    isbn: {
+      type: DataTypes.STRING,
       allowNull: false
     },
     book_name: {
