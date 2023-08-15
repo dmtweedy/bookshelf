@@ -28,15 +28,3 @@ var search = function(){
 }
 
 
-function showData(bookDesc, bookTitle){
-
-    var newCard = `
-    <div class="card-body">
-    <h5 class="card-title">${bookTitle}</h5>
-    <p class="card-text">${bookDesc}</p>
-    <a href="#" class="btn btn-primary">See More</a>
-    </div>
- `
-    $('.card').append(newCard);
-    console.log('hello');
-}
