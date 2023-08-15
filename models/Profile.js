@@ -42,27 +42,27 @@ Profile.init(
         len: [8],
       },
     },
-    fav_books: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'books',
-        key: 'id'
-      }
-    },
-    read_books: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'books',
-        key: 'id'
-      }
-    },
-    want_books: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'books',
-        key: 'id'
-      }
-    },
+    // fav_books: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'fav_books',
+    //     key: 'id'
+    //   }
+    // },
+    // read_books: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'books',
+    //     key: 'id'
+    //   }
+    // },
+    // want_books: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'books',
+    //     key: 'id'
+    //   }
+    // },
     reviews: {
       type: DataTypes.INTEGER,
       references: {
