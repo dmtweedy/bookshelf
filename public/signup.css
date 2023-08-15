@@ -1,3 +1,8 @@
 section {
   margin-top: 50px;
 }
+
+#text {
+  font-size: larger;
+  font-weight: bold;
+}
