@@ -2,12 +2,16 @@
 const Profile = require('./Profile');
 const Books = require('./Books');
 
-Profile.hasMany(Books, {
-  foreignKey: 'id',
-});
+Books.belongsToMany(Profile, {
+  foreignKey: 'fav_books'
+})
 
 Books.belongsToMany(Profile, {
-  foreignKey: 'id'
+  foreignKey: 'want_books'
+})
+
+Books.belongsToMany(Profile, {
+  foreignKey: 'read_books'
 })
 
 module.exports = {
