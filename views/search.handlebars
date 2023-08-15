@@ -1,0 +1,35 @@
+<div class="book">
+    <div class="page cover-front" onclick="movePage(this, 1)">
+      <h1>Bookshelf</h1>
+      <div class="hat"><i class="fab fa-pied-piper-hat"></i></div>
+      <h2>Group Project 2</h2>
+    </div>
+    <div class="page cover-front" onclick="movePage(this, 2)">
+     <!--inside left page, put suggested books-->
+    </div>
+    <div class="page text-page">
+      <div class="content">
+        <p>Search for the adventure you seek, all of this knowledge for you to reap. Paper corridors that go so deep, your dreams await with one simple leap.</p>
+        <input class="searchbar" type="text" placeholder="Search for a Book">
+        <button class="searchBtn" type="submit" id="submit">Search</button>
+          <!--Glide JS feature -->
+        <section class="container justify-content-center">
+            <div class="glide">
+              <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                  <li class="glide__slide"><img src="https://placehold.co/300x300" alt=""></li>
+                  <li class="glide__slide"><img src="https://placehold.co/300x300" alt=""></li>
+                  <li class="glide__slide"><img src="https://placehold.co/300x300" alt=""></li>
+                </ul>
+              </div>
+              <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+              </div>
+            </div>
+          </section>
+      </div>
+
+
+    </div>
+  </div>
