@@ -58,19 +58,25 @@ var search = function(){
             bookDesc.push(data.items[i].volumeInfo.description);
             bookTitle.push(data.items[i].volumeInfo.title);
           }
-          window.location.replace('/results') 
           toLocal(bookDesc, bookTitle)
+          window.location.replace('/results') 
     })
 }
 
 function toLocal (bookDesc, bookTitle) {
+  var bookKey = bookTitle
+  var bookVal = bookDesc
+
+  for (var i = bookKey.length - 1; i >= 0; i--){
+    for (var x = bookVal.length - 1; i >= 0; i--){
   var store = {
-    key: bookTitle,
-    val: bookDesc
+    key: bookKey[i],
+    val: bookVal[x]
   }
+    }
+  }
+memoryArr.push(store);
 
-  memoryArr.push(store);
-
-  localStorage.setItem('key', JSON.stringify(memoryArr));
+localStorage.setItem('key', JSON.stringify(memoryArr));
 }
 
