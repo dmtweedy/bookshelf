@@ -23,3 +23,4 @@ function movePage(e, page) {
   
 }
 
+window.location.replace('/results')
