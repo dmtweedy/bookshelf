@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./firstpage.css">
+  <link rel="stylesheet" href="./glide-css/glide.core.css">
+  <link rel="stylesheet" href="./glide-css/glide.theme.css">
+</head>
+
+<body>
+  <header>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="../book-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      Bookshelf
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- <ul class="navbar-nav">                            ----------- add when you are logged in!
+        <li class="nav-item active">                          ----------- #16 in unit 13 explains in routes/api/userRoutes
+          <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">To Read</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Have Read</a>
+        </li>
+      </ul> -->
+    </div>
+     <ul class="nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign Up</a>
+      </li>
+    </ul>
+  </nav>
+ </header>
+
+  {{{ body }}}
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <!--Glide JS feature -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script>
+    new Glide('.glide').mount()
+  </script>
+
+  <script src="./js/firstpage.js"></script>
+</body>
+</html>
+
+
