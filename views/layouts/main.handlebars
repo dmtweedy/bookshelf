@@ -10,7 +10,7 @@
 <body>
   <header>
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#" onclick=sendtoHome()>
       <img src="../book-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
       Bookshelf
     </a>
@@ -35,10 +35,10 @@
     </div>
      <ul class="nav justify-content-end">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Login</a>
+        <a class="nav-link active" href="#" onclick=sendtoLogin()>Login</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
+        <a class="nav-link" href="#" id="signup" onclick=sendtoSignUp()>Sign Up</a>
       </li>
     </ul>
   </nav>
@@ -47,12 +47,6 @@
   {{{ body }}}
   
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-  <!--Glide JS feature -->
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-  <script>
-    new Glide('.glide').mount()
-  </script>
 
   <script src="./js/firstpage.js"></script>
 </body>
