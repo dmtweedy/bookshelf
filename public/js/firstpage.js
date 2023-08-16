@@ -31,6 +31,14 @@ function sendtoSignUp () {
   window.location.replace('/signup') 
 };
 
+function sendtoLogin () {
+  window.location.replace('/login') 
+};
+
+function sendtoHome () {
+  window.location.replace('/') 
+}
+
 var search = function(){
 
     var userInput = document.querySelector(".searchbar").value;
