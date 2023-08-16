@@ -27,6 +27,10 @@ function movePage(e, page) {
   
 }
 
+function sendtoSignUp () {
+  window.location.replace('/signup') 
+};
+
 var search = function(){
 
     var userInput = document.querySelector(".searchbar").value;
