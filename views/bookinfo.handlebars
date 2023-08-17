@@ -4,17 +4,20 @@
     <h1>Book title</h1>
         
     <h3>Book Description</h3>
-    
+
     <p>Leave a Review</p>
     <input class="review-text" type="text" placeholder="Enter Your Review Here">
+    {{ review }}
     <!-- 
         Add review to data base with their text input and the book they reviewed.
     -->
     <select class="list">
-        <option value="wish-list">Add to Wish List</option>
-        <option value="com-read">Add to Completed List</option>
-        <option value="fav-list">Add to Favorites</option>
+        <button class="wish-btn">Add to Wish List</button>
+        <button class="com-btn">Add to Completed List</button>
+        <button class="fav-btn">Add to Favorites</button>
     </select>
+
+    <p hidden class="book-id"> {{ book-id }} </p> 
 
 
 </div>
