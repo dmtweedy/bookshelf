@@ -45,11 +45,7 @@ router.get('/profile', async (req, res) => {
   const wants = wantedBooks.map(want => want.get({plain: true}))
   console.log(wants);
 
-
-
-
-
-  res.render('profile', { user, favorites })
+  res.render('profile', { user, favorites, reads, wants })
 })
 
 router.get('/signup', (req, res) => {
