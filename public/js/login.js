@@ -7,4 +7,4 @@ const userInfo = [ username, password ]
 fetch('/api/user/login', {
   method: 'POST',
   body: JSON.stringify(userInfo),
-});
+}) .then(response => response.json());

@@ -9,4 +9,4 @@ const userInfo = [fname, lname, username, email, password]
 fetch('/api/user/signup', {
   method: 'POST',
   body: JSON.stringify(userInfo),
-});
+}) .then(response => response.json());

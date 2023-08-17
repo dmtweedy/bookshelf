@@ -22,6 +22,33 @@ router.get('/profile', async (req, res) => {
   )
   const favorites = favoriteBooks.map(fav => fav.get({plain: true}))
   console.log(favorites)
+
+  const readBooks = await UserBooks.findAll(
+    {
+      where: { 
+        read: true,
+        user_id: req.session.user_id
+      },
+    }
+  ) 
+  const reads = readBooks.map(read => read.get({plain: true}))
+  console.log(reads);
+
+  const wantedBooks = await UserBooks.findAll(
+    {
+      where: { 
+        want: true,
+        user_id: req.session.user_id
+      },
+    }
+  )
+  const wants = wantedBooks.map(want => want.get({plain: true}))
+  console.log(wants);
+
+
+
+
+
   res.render('profile', { user, favorites })
 })
 
