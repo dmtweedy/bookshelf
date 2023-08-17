@@ -9,6 +9,10 @@ router.get('/results', (req, res) => {
  res.render('results')
 })
 
+router.get('/bookinfo', (req, res) => {
+  res.render('bookinfo')
+ })
+
 router.get('/profile', async (req, res) => {
   console.log(req.session)
 
