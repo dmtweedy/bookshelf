@@ -15,34 +15,28 @@ router.get('/:isbn', (req, res) => {
   });
 });
 
-router.post('/favorite', (req, res) => {
-  Books.create([{ through: UserBooks, as: 'favorite' }],
-  {
-    where: {
-      user_id: req.session.user_id,
-      favorite: true,
-    }
-  })}
-);
+router.post('/favorite/:bookid', (req, res) => {
+  UserBooks.create({
+    user_id: req.session.user_id, 
+    book_id: req.params.bookid,
+    favorite: true
+  })
+});
 
-router.post('/read', (req, res) => {
-  Books.create([{ through: UserBooks, as: 'read' }],
-  {
-    where: {
-      user_id: req.session.user_id,
-      read: true,
-    }
-  })}
-);
+router.post('/read/:bookid', (req, res) => {
+  UserBooks.create({
+    user_id: req.session.user_id, 
+    book_id: req.params.bookid,
+    read: true
+  })
+});
 
 router.post('/want', (req, res) => {
-  Books.create([{ through: UserBooks, as: 'want' }],
-  {
-    where: {
-      user_id: req.session.user_id,
-      want: true,
-    }
-  })}
-);
+  UserBooks.create({
+    user_id: req.session.user_id, 
+    book_id: req.params.bookid,
+    want: true
+  })
+});
 
 module.exports = router
