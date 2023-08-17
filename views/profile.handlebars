@@ -6,8 +6,18 @@
       </h1>
     </header>
       <main class="container container-fluid mt-5">
-        <h2>Continue Reading</h2>
+        <h2>Favorite Books</h2>
+           {{#each favorites as |favorite| }}
+           <p></p>
+           {{/each}}
         <h2>Completed Reads</h2>
+            {{#each reads as |read| }}
+            <p></p>
+            {{/each}}
+        <h2>Want to Reads</h2>
+            {{#each wants as |want|}}
+            <p></p>
+            {{/each}}
         <h2>Your Reviews</h2>
 
       </main>
