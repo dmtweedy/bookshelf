@@ -36,7 +36,11 @@ UserBooks.init(
     },
     want: {
       type: DataTypes.BOOLEAN
+    },
+    review: {
+      type: DataTypes.STRING
     }
+
   },
   {
     sequelize,
