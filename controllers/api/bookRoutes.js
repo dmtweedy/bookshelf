@@ -39,3 +39,5 @@ router.post('/want', (req, res) => {
     want: true
   })
 });
+
+module.exports = router 

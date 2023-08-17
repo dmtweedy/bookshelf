@@ -43,6 +43,7 @@ function searchthis(userInput) {
   .then(function(data){
     console.log(data)
   })
+  window.location.replace('/bookinfo') 
 }  
 
 getStorage()
