@@ -3,6 +3,7 @@ const lname = document.querySelector('#lname');
 const username = document.querySelector('#username');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
+const signupBtn = document.querySelector('#signupBtn');
 
 fetch('/api/user/signup', {
   method: 'POST',
@@ -17,3 +18,7 @@ fetch('/api/user/signup', {
     "Content-Type": "application/json"
   }
 }) .then(response => response.json());
+
+signupBtn.addEventListener('click', function () {
+  window.location.replace('profile');
+})
