@@ -1,10 +1,9 @@
 const sequelize = require('../config/connection');
 const { Profile, Books, UserBooks } = require('../models');
 
-
-
 const seed = async () => {
-  await sequelize.sync({ force: true })
+  try {
+    await sequelize.sync({ force: true });
 
   await Profile.bulkCreate([
     {
@@ -49,7 +48,12 @@ const seed = async () => {
     }
   ])
 
-  process.exit()
-}
+    console.log('Seed completed successfully.');
+  } catch (error) {
+    console.error('Seed failed:', error);
+  } finally {
+    process.exit();
+  }
+};
 
-seed()
+seed();

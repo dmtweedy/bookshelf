@@ -29,7 +29,8 @@ UserBooks.init(
       }
     },
     favorite: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      default: false
     },
     read: {
       type: DataTypes.BOOLEAN
