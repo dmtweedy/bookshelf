@@ -1,33 +1,41 @@
-const { Op } = require('sequelize');
-const router = require('express').Router();
-const Books = require('../../models/Books');
 
-async function searchBooks(query) {
-  try {
-    const searchResults = await Books.findAll({
-      where: {
-        book_name: {
-          [Op.like]: `%${query}%`
-        }
-      }
-    });
+const router = require('express').Router()
+const { Books, UserBooks } = require("../../models");
 
-    return searchResults;
-  } catch (error) {
-    console.error('Error searching books:', error);
-    throw error;
-  }
-}
 
-router.get('/search', async (req, res) => {
-  try {
-    const searchQuery = req.query.query;
-    const searchResults = await searchBooks(searchQuery);
-
-    res.render('results', { searchResults });
-  } catch (error) {
-    res.status(500).json({ error: 'An error occurred.' });
-  }
+// GET a book
+router.get('/:isbn', (req, res) => {
+  Books.findOne(
+    {
+      where: { 
+        isbn: req.params.isbn 
+      },
+    }
+  ).then((bookData) => {
+    res.json(bookData);
+  });
 });
 
-module.exports = router;
+router.post('/favorite/:bookid', (req, res) => {
+  UserBooks.create({
+    user_id: req.session.user_id, 
+    book_id: req.params.bookid,
+    favorite: true
+  })
+});
+
+router.post('/read/:bookid', (req, res) => {
+  UserBooks.create({
+    user_id: req.session.user_id, 
+    book_id: req.params.bookid,
+    read: true
+  })
+});
+
+router.post('/want', (req, res) => {
+  UserBooks.create({
+    user_id: req.session.user_id, 
+    book_id: req.params.bookid,
+    want: true
+  })
+});
