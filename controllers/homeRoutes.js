@@ -52,6 +52,14 @@ router.get('/profile', async (req, res) => {
   res.render('profile', { user, favorites, reads, wants })
 })
 
+router.get('/bookinfo', (req, res) => {
+  res.render('bookinfo')
+})
+
+router.get('/userpage', (req, res) => {
+  res.render('userpage')
+})
+
 router.get('/signup', (req, res) => {
   res.render('signup')
 })
