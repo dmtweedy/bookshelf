@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const cors = require('cors');
 // const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -29,6 +30,7 @@ const sess = {
   })
 };
 
+app.use(cors());
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
@@ -42,5 +44,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening at localhost'));
+  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
 });

@@ -4,6 +4,8 @@ var bookDesc = [];
 var bookTitle = [];
 let currentPage = 1;
 
+var memoryArr =  JSON.parse(localStorage.getItem('key')) || []
+
 function toggleClass(e, toggleClassName) {
   if(e.className.includes(toggleClassName)) {
     e.className = e.className.replace(' ' + toggleClassName, '');
@@ -55,10 +57,26 @@ var search = function(){
             console.log(bookTitle);
             bookDesc.push(data.items[i].volumeInfo.description);
             bookTitle.push(data.items[i].volumeInfo.title);
-        }
-        window.location.replace('/results')    
+          }
+          toLocal(bookDesc, bookTitle)
+          window.location.replace('/results') 
     })
+}
 
+function toLocal (bookDesc, bookTitle) {
+  var bookKey = bookTitle
+  var bookVal = bookDesc
 
+  for (var i = bookKey.length - 1; i >= 0; i--){
+    for (var x = bookVal.length - 1; i >= 0; i--){
+  var store = {
+    key: bookKey[i],
+    val: bookVal[x]
+  }
+    }
+  }
+memoryArr.push(store);
+
+localStorage.setItem('key', JSON.stringify(memoryArr));
 }
 

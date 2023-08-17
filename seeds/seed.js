@@ -1,10 +1,26 @@
 const sequelize = require('../config/connection');
 const { Profile, Books, UserBooks } = require('../models');
 
-
-
 const seed = async () => {
-  await sequelize.sync({ force: true })
+  try {
+    await sequelize.sync({ force: true });
+
+  await Profile.bulkCreate([
+    {
+      user_fname: "Katy",
+      user_lname: "Vincent",
+      username: "KatyVincent",
+      email: "kvincent@instructors.2u.com",
+      password: "password"
+    },
+    {
+      user_fname: "Dizzy",
+      user_lname: "Vincent",
+      username: "DizzyVincent",
+      email: "dizzy@instructors.2u.com",
+      password: "password1"
+    }
+  ])
 
   await Books.bulkCreate([
     {
@@ -16,21 +32,6 @@ const seed = async () => {
       isbn: "9876543210",
       book_name: 'Katy is the best',
       author: "Gary Almes"
-    }
-  ])
-
-  await Profile.bulkCreate([
-    {
-      user_fname: "Katy",
-      user_lname: "Vincent",
-      email: "kvincent@instructors.2u.com",
-      password: "password"
-    },
-    {
-      user_fname: "Dizzy",
-      user_lname: "Vincent",
-      email: "dizzy@instructors.2u.com",
-      password: "password"
     }
   ])
 
@@ -47,7 +48,12 @@ const seed = async () => {
     }
   ])
 
-  process.exit()
-}
+    console.log('Seed completed successfully.');
+  } catch (error) {
+    console.error('Seed failed:', error);
+  } finally {
+    process.exit();
+  }
+};
 
-seed()
+seed();

@@ -1,3 +1,4 @@
+
 const router = require('express').Router()
 const { Books, UserBooks } = require("../../models");
 
@@ -38,5 +39,3 @@ router.post('/want', (req, res) => {
     want: true
   })
 });
-
-module.exports = router

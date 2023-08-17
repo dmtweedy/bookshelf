@@ -24,7 +24,7 @@ Profile.init(
       allowNull: false
     },
     username: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: true
     },
