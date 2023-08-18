@@ -20,8 +20,8 @@ const sess = {
   cookie: {
     maxAge: 300000,
     httpOnly: true,
-    secure: false,
-    sameSite: 'strict',
+    secure: true,
+    sameSite: "strict",
   },
   resave: false,
   saveUninitialized: true,
@@ -41,7 +41,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/bookinfo/:bookid', express.static(path.join(__dirname, 'public')));
+app.use('/bookinfo', express.static(path.join(__dirname, 'public')));
+
 app.use(routes);
+
+// Serve the bookinfo.css with the correct MIME type
+app.get('/bookinfo/:bookid/bookinfo.css', (req, res) => {
+  res.type('text/css');
+  res.sendFile(path.join(__dirname, 'public', 'bookinfo.css'));
+});
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
