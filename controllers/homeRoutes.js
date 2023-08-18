@@ -9,9 +9,24 @@ router.get('/results', (req, res) => {
  res.render('results')
 })
 
-router.get('/bookinfo', (req, res) => {
-  res.render('bookinfo')
- })
+router.get('/bookinfo/:bookid', async (req, res) => {
+  try {
+    // Retrieve the book ID from the request parameters
+    const bookId = req.params.bookid;
+
+    // Construct the URL to fetch book details
+    const queryURL = `https://www.googleapis.com/books/v1/volumes/${bookId}`;
+
+    // Fetch book details from the API
+    const response = await fetch(queryURL);
+    const bookDetails = await response.json();
+
+    res.render('bookinfo', { bookDetails, isBookInfoPage: true });
+  } catch (error) {
+    console.error('Error fetching book details:', error);
+    res.status(500).send('Error fetching book details');
+  }
+});
 
 router.get('/profile', async (req, res) => {
   console.log(req.session)
@@ -50,10 +65,6 @@ router.get('/profile', async (req, res) => {
   console.log(wants);
 
   res.render('profile', { user, favorites, reads, wants })
-})
-
-router.get('/bookinfo', (req, res) => {
-  res.render('bookinfo')
 })
 
 router.get('/userpage', (req, res) => {

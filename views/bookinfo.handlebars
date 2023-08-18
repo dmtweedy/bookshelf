@@ -1,28 +1,24 @@
-<section class="main text-center">
-<div class="info-container">
-    <div class="book-pic"> Insert Book img from Api </div>
-    <h1>Book title</h1>
-        
-    <h3>Book Description</h3>
+<section class="bookinfo-main text-center">
+    <div class="bookinfo-info-container">
+        <div class="bookinfo-book-pic"><img id="bookinfo-book-img" src="{{ bookDetails.image }}" alt="Book Cover"></div>
+        <h1 id="bookinfo-title">{{ bookDetails.title }}</h1>
+            
+        <h3 id="bookinfo-description">{{ bookDetails.description }}</h3>
 
-    <p>Leave a Review</p>
-    <input class="review-text" type="text" placeholder="Enter Your Review Here">
-    {{ review }}
-    <!-- 
-        Add review to data base with their text input and the book they reviewed.
-    -->
-    <select class="list">
-        <button class="wish-btn">Add to Wish List</button>
-        <button class="com-btn">Add to Completed List</button>
-        <button class="fav-btn">Add to Favorites</button>
-    </select>
+        <p class="bookinfo-review-label">Leave a Review!</p>
+        <input class="bookinfo-review-text" type="text" placeholder="Enter Your Review Here">
+        {{ review }}
+        <!-- 
+            Add review to database with their text input and the book they reviewed.
+        -->
+        <div class="bookinfo-list">
+            <button id="bookinfo-wish-btn" class="bookinfo-wish-btn">Add to Wish List</button>
+            <button id="bookinfo-com-btn" class="bookinfo-com-btn">Add to Completed List</button>
+            <button id="bookinfo-fav-btn" class="bookinfo-fav-btn">Add to Favorites</button>
+        </div>
 
-    <p hidden class="book-id"> {{ book-id }} </p> 
-
-
-</div>
+        <p hidden class="bookinfo-book-id">{{ bookDetails.id }}</p> 
+    </div>
 </section>
 
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-<script src="./js/results.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

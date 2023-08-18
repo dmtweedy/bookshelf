@@ -31,20 +31,25 @@ $("body").on("click", ".btn-book", function() {
   searchthis(userInput)
 })
 
+// This function fetches book details and redirects to the bookinfo page
 function searchthis(userInput) {
-
-  
-  var queryURL = ` https://www.googleapis.com/books/v1/volumes/${userInput}`
+  var queryURL = `https://www.googleapis.com/books/v1/volumes/${userInput}`;
 
   fetch(queryURL)
-  .then(function(response){
-      return response.json()
-  })
-  .then(function(data){
-    console.log(data)
-  })
-  window.location.replace('/bookinfo') 
-}  
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      // Store the fetched book data in localStorage
+      localStorage.setItem('bookData', JSON.stringify(data));
+
+      // Redirect to the bookinfo page with the book ID
+      window.location.replace(`/bookinfo/${userInput}`);
+    })
+    .catch(function(error) {
+      console.error("Error fetching book details:", error);
+    });
+}
 
 getStorage()
 

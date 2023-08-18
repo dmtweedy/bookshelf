@@ -1014,3 +1014,63 @@ section {
   font-size: larger;
   font-weight: bold;
 }
+
+.bookinfo-main {
+	margin-top: 50px;
+}
+
+#bookinfo-book-img {
+	width: 300px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+#bookinfo-title {
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+#bookinfo-description {
+	font-size: 20px;
+	margin: 10px 100px;
+}
+
+
+.bookinfo-review-label {
+	font-family: Arial, Helvetica, sans-serif, sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.bookinfo-review-text {
+	font-size: 20px;
+	padding: 5px 10px;
+	width: 100%;
+	max-width: 400px;
+	margin-bottom: 20px;
+}
+
+.bookinfo-list {
+	margin-top: 20px;
+}
+
+.bookinfo-wish-btn,
+.bookinfo-com-btn,
+.bookinfo-fav-btn {
+	margin-right: 10px;
+	padding: 10px 20px;
+	font-size: 20px;
+	background-color: #007bff;
+	border: none;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.bookinfo-wish-btn:hover,
+.bookinfo-com-btn:hover,
+.bookinfo-fav-btn:hover {
+	background-color: #0056b3;
+}
