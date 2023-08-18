@@ -56,10 +56,12 @@ var search = function(){
             const desc = data.items[i].volumeInfo.description;
             const title = data.items[i].volumeInfo.title
             const id = data.items[i].id
+            const image = data.items[i].volumeInfo.imageLinks;
             var store = {
               key: desc,
               val: title,
-              id: id
+              id: id,
+              image: image
             }
             memoryArr.push(store);
         }

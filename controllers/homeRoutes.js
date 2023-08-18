@@ -9,6 +9,10 @@ router.get('/results', (req, res) => {
  res.render('results')
 })
 
+router.get('/bookinfo', (req, res) => {
+  res.render('bookinfo')
+ })
+
 router.get('/profile', async (req, res) => {
   console.log(req.session)
 
@@ -46,6 +50,14 @@ router.get('/profile', async (req, res) => {
   console.log(wants);
 
   res.render('profile', { user, favorites, reads, wants })
+})
+
+router.get('/bookinfo', (req, res) => {
+  res.render('bookinfo')
+})
+
+router.get('/userpage', (req, res) => {
+  res.render('userpage')
 })
 
 router.get('/signup', (req, res) => {
