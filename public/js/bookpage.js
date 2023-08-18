@@ -4,6 +4,9 @@ const desc = document.querySelector("#bookinfo-description");
 const fav = document.querySelector("#bookinfo-fav-btn");
 const com = document.querySelector("#bookinfo-com-btn");
 const wish = document.querySelector("#bookinfo-wish-btn");
+const addReviewBtn = document.querySelector(".bookinfo-review-btn");
+const reviewSuccessMessage = document.querySelector(".review-success-message");
+const userReview = document.querySelector(".user-review");
 
 // Get the book ID from the hidden element
 const bookid = document.querySelector(".bookinfo-book-id").textContent;
@@ -23,6 +26,32 @@ function updateUI(bookDetails) {
 
 // Update the UI with the stored book data
 updateUI(storedBookData);
+
+window.addEventListener('load', function() {
+    const storedReview = localStorage.getItem('userReview');
+    if (storedReview) {
+        userReview.innerHTML = `"${storedReview}"`;
+        userReview.style.display = "block";
+    }
+});
+
+addReviewBtn.addEventListener('click', function() {
+    const reviewText = document.querySelector(".bookinfo-review-text").value;
+
+    // Save the review to local storage
+    localStorage.setItem('userReview', reviewText);
+
+    // Show success message
+    reviewSuccessMessage.textContent = "You've successfully added a review!";
+    reviewSuccessMessage.style.display = "block";
+    userReview.innerHTML = `"${reviewText}"`;
+    userReview.style.display = "block";
+
+    // Automatically remove the success message after 3 seconds
+    setTimeout(function() {
+        reviewSuccessMessage.style.display = "none";
+    }, 3000);
+});
 
 // Add event listeners to buttons
 fav.addEventListener('click', function() {
